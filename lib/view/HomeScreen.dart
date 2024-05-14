@@ -1,23 +1,50 @@
+import 'dart:convert';
+
 import 'package:active_fit/view/Ejercicio/EjercicioScreen.dart';
 import 'package:active_fit/view/Programacion/ProgramacionScreen.dart';
 import 'package:active_fit/view/Rutina/RutinaScreen.dart';
+import 'package:active_fit/view/widget/menu_de_navegacion.dart';
 import 'package:flutter/material.dart';
 import 'package:active_fit/config/theme/app_theme.dart';
 import 'package:active_fit/view/Categoria/CategoriaScreen.dart';
 import 'package:active_fit/view/widget/custom_image_card.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
-  static const name = '/home';
+  static const name = '/homeScreen';
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Future<List<dynamic>> _fetchCategorias() async {
+    final response = await http
+        .get(Uri.parse('https://eeb2-189-28-69-140.ngrok-free.app/categoria'));
+    if (response.statusCode == 200) {
+      print(json.decode(response.body)['data']);
+      return json.decode(response.body)['data'];
+    } else {
+      throw Exception('Failed to load categorias');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    int _selectedIndex = 0;
+
+    void _onItemTapped(int index) {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
     return Scaffold(
       backgroundColor: AppTheme.textFieldBgColor,
+       bottomNavigationBar: MenuDeNavegacion(
+        selectedIndex: _selectedIndex,
+        onItemTapped: _onItemTapped,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -47,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Column(
@@ -55,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     CustomImageCard(
                       imagePath: 'assets/gym_categoria.jpg',
-                      title: 'Categorias',                   
+                      title: 'Categorias',
                       onTap: () {
                         Navigator.push(
                           context,
@@ -65,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                     ),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     CustomImageCard(
                       imagePath: 'assets/gym_ejercicio.jpg',
                       title: 'Ejercicios',
@@ -78,11 +105,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                     ),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     CustomImageCard(
                       imagePath: 'assets/gym_rutina.jpg',
                       title: 'Rutinas',
-                    
                       onTap: () {
                         Navigator.push(
                           context,
@@ -92,11 +118,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                     ),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     CustomImageCard(
                       imagePath: 'assets/gym_programacion.jpg',
                       title: 'Programacion',
-                    
                       onTap: () {
                         Navigator.push(
                           context,
@@ -106,6 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                     ),
+                    SizedBox(height: 15),
                   ],
                 ),
               ),
@@ -113,6 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      
     );
   }
 }
@@ -124,9 +151,9 @@ class CustomImageCard extends StatelessWidget {
 
   const CustomImageCard({
     Key? key,
-      required this.imagePath,
-      required this.title,
-      required this.onTap,
+    required this.imagePath,
+    required this.title,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -176,7 +203,6 @@ class CustomImageCard extends StatelessWidget {
                     horizontal: 12.0,
                     vertical: 8.0,
                   ),
-                  
                 ),
               ],
             ),

@@ -1,15 +1,12 @@
 
 
-
-
 import 'package:active_fit/config/theme/app_theme.dart';
-
-import 'package:active_fit/view/widget/card_categorias.dart';
+import 'package:active_fit/view/Ejercicio/CrearEjercicio.dart';
+import 'package:active_fit/view/Ejercicio/DetalleEjercicio.dart';
 import 'package:active_fit/view/widget/card_ejercicios.dart';
-import 'package:active_fit/view/widget/custom_image_card.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 
 
 class EjercicioScreen extends StatefulWidget {
@@ -25,16 +22,43 @@ class _EjercicioScreenState extends State<EjercicioScreen> {
       backgroundColor: AppTheme.textFieldBgColor,
       appBar: AppBar(
         backgroundColor: AppTheme.scaffoldBbColor,
-        elevation: 0.5,
-        
-        title: Text('Ejercicios'  , style: TextStyle(color: AppTheme.primaryColor, fontWeight: FontWeight.bold),),
-        // leading: IconButton(
-        //   icon: const Icon(
-        //     Icons.menu,
-        //     color: AppTheme.primaryColor,
-        //   ),
-        //   onPressed: () {},
-        // ),
+        elevation: 0,
+       title: Text(
+          'Ejercicios',
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+            color: AppTheme.primaryColor,
+          ),
+        ),
+        actions: [
+          ElevatedButton(
+            child: Row(
+              children: [
+                Icon(
+              Icons.add,
+              color: AppTheme.primaryColor,
+            ),
+                Text(
+                  'Agregar',
+                  style: TextStyle(
+                    color: AppTheme.primaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+              ],
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: AppTheme.scaffoldBbColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            onPressed: () {
+              context.push(CrearEjercicioScreen.name);
+            },
+          ),
+        ],
         systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
       body: SafeArea(
@@ -63,7 +87,7 @@ class _EjercicioScreenState extends State<EjercicioScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => EjercicioScreen(),
+                            builder: (context) => DetalleEjercicioScreen( videoUrl:  'https://www.youtube.com/watch?v=wLGn8XmLeEM&ab_channel=ATHLEAN-XEspa%C3%B1ol', nombre: 'Flexiones', descripcion: 'Ejercicio para los pectorales'),
                           ),
                         );
                       },
@@ -81,7 +105,8 @@ class _EjercicioScreenState extends State<EjercicioScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => EjercicioScreen(),
+                            builder: (context) => DetalleEjercicioScreen(videoUrl:  'https://www.youtube.com/watch?v=wLGn8XmLeEM&ab_channel=ATHLEAN-XEspa%C3%B1ol', nombre: 'Flexiones', descripcion: 'Ejercicio para los pectorales'),
+
                           ),
                         );
                       },

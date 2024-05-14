@@ -3,11 +3,13 @@
 
 
 import 'package:active_fit/config/theme/app_theme.dart';
+import 'package:active_fit/view/Rutina/RutinaScreen.dart';
 
 import 'package:active_fit/view/widget/card_categorias.dart';
 import 'package:active_fit/view/widget/card_ejercicios.dart';
 import 'package:active_fit/view/widget/card_programacion.dart';
 import 'package:active_fit/view/widget/custom_image_card.dart';
+import 'package:active_fit/view/widget/menu_de_navegacion.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,6 +24,13 @@ class ProgramacionScreen extends StatefulWidget {
 class _ProgramacionScreenState extends State<ProgramacionScreen> {
   @override
   Widget build(BuildContext context) {
+    int _selectedIndex = 1;
+
+    void _onItemTapped(int index) {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
     return Scaffold(
       backgroundColor: AppTheme.textFieldBgColor,
       appBar: AppBar(
@@ -37,6 +46,10 @@ class _ProgramacionScreenState extends State<ProgramacionScreen> {
         //   onPressed: () {},
         // ),
         systemOverlayStyle: SystemUiOverlayStyle.dark,
+      ),
+      bottomNavigationBar: MenuDeNavegacion(
+        selectedIndex: _selectedIndex,
+        onItemTapped: _onItemTapped,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -63,7 +76,7 @@ class _ProgramacionScreenState extends State<ProgramacionScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ProgramacionScreen(),
+                            builder: (context) => RutinaScreen(),
                           ),
                         );
                       },
@@ -82,7 +95,7 @@ class _ProgramacionScreenState extends State<ProgramacionScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ProgramacionScreen(),
+                            builder: (context) => RutinaScreen(),
                           ),
                         );
                       }, 

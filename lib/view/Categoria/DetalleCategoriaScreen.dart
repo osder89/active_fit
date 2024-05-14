@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 
 
 class DetalleCategoriaScreen extends StatefulWidget {
-  static const name = '/detalle_categoria';
+  static const name = '/detalleCategoria';
   @override
   _DetalleCategoriaScreenState createState() => _DetalleCategoriaScreenState();
 }

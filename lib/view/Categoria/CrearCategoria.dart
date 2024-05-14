@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 
 class CrearCategoriaScreen extends StatelessWidget {
   const CrearCategoriaScreen({super.key});
-  static const name = '/crear_categoria';
+  static const name = '/crearCategoria';
 
   @override
   Widget build(BuildContext context) {

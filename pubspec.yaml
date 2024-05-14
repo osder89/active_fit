@@ -16,7 +16,11 @@ dependencies:
   go_router: ^12.1.1
   animate_do: ^3.1.2
   dio: ^5.4.0
-  webview_flutter: ^2.0.13
+  #webview_flutter: ^2.0.13
+  youtube_player_flutter: ^9.0.1
+  permission_handler: ^11.3.1
+  #video_player: ^2.8.5
+  http: ^1.2.0
   # flutter_html: ^2.1.2
   # flutter_math_fork: ^0.5.0
   # flutter_layout_grid: ^1.0.6

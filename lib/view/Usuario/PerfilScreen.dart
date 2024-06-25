@@ -3,7 +3,7 @@ import 'package:active_fit/view/widget/menu_de_navegacion.dart';
 import 'package:flutter/material.dart';
 
 class PerfilScreen extends StatefulWidget {
-  static const String name = 'PerfilScreen';
+  static const String name = '/PerfilScreen';
   const PerfilScreen({Key? key}) : super(key: key);
 
   @override
@@ -34,30 +34,8 @@ class _PerfilScreenState extends State<PerfilScreen> {
       ),
       body: Stack(
         children: [
-          // Imagen de fondo con sombreado
-          Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage('assets/gym_rutina.jpg'),
-              ),
-            ),
-            foregroundDecoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-                colors: [
-                  Colors.black.withOpacity(0.8),
-                  Colors.transparent,
-                ],
-              ),
-            ),
-          ),
-          // Contenedor para la foto
           Positioned(
-            top: halfScreenHeight - photoHeight,
+            top: 0,
             left: 0,
             right: 0,
             height: photoHeight,
@@ -65,11 +43,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('assets/gym_rutina.jpg'),
-                ),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(40),
-                  bottomRight: Radius.circular(40),
+                  image: AssetImage('assets/perfil.png'),
                 ),
                 boxShadow: [
                   BoxShadow(
@@ -114,7 +88,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'Apellido: Doe',
+                    'Apellido: Garcia',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.black,
@@ -146,7 +120,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'Correo electrónico: john.doe@example.com',
+                    'Correo electrónico: john.doe@gmail.com',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.black,

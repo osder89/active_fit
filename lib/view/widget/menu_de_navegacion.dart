@@ -2,6 +2,7 @@ import 'package:active_fit/view/HomeScreen.dart';
 import 'package:active_fit/view/Usuario/HomeScreenUsuario.dart';
 import 'package:active_fit/view/Programacion/ProgramacionScreen.dart';
 import 'package:active_fit/view/Usuario/PerfilScreen.dart';
+import 'package:active_fit/view/reporte/Reporte.dart';
 import 'package:flutter/material.dart';
 
 class MenuDeNavegacion extends StatefulWidget {
@@ -38,7 +39,7 @@ class _MenuDeNavegacionState extends State<MenuDeNavegacion> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeScreenUsuario(),
+            builder: (context) => ReporteScreen(),
           ),
         );
         break;
@@ -82,7 +83,7 @@ class _MenuDeNavegacionState extends State<MenuDeNavegacion> {
           unselectedFontSize: 12,
           currentIndex: widget.selectedIndex,
           onTap: _onItemTapped,
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.fitness_center),
               label: 'Inicio',
@@ -92,8 +93,8 @@ class _MenuDeNavegacionState extends State<MenuDeNavegacion> {
               label: 'Programación',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.food_bank_outlined),
-              label: 'Dieta',
+              icon: Icon(Icons.text_snippet_outlined),
+              label: 'Reportes',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.account_circle_outlined),
@@ -111,7 +112,7 @@ class _MenuDeNavegacionState extends State<MenuDeNavegacion> {
         widget.onItemTapped(index);
       },
       child: Container(
-        padding: EdgeInsets.all(8), // Ajuste de relleno dentro del ítem
+        padding: EdgeInsets.all(8), 
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -120,7 +121,7 @@ class _MenuDeNavegacionState extends State<MenuDeNavegacion> {
               color: widget.selectedIndex == index
                   ? Colors.grey
                   : Colors
-                      .white, // Cambia el color del ícono según el ítem seleccionado
+                      .white, 
             ),
             Text(
               label,
@@ -128,7 +129,7 @@ class _MenuDeNavegacionState extends State<MenuDeNavegacion> {
                 color: widget.selectedIndex == index
                     ? Colors.grey
                     : Colors
-                        .white, // Cambia el color del texto según el ítem seleccionado
+                        .white, 
               ),
             ),
           ],

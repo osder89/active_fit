@@ -12,6 +12,8 @@ import 'package:active_fit/view/Programacion/ProgramacionScreen.dart';
 import 'package:active_fit/view/Rutina/CrearRutinaScreen.dart';
 import 'package:active_fit/view/Rutina/RutinaScreen.dart';
 import 'package:active_fit/view/Usuario/PerfilScreen.dart';
+import 'package:active_fit/view/reporte/Reporte.dart';
+import 'package:active_fit/view/reporte/ReporteDetalleScreen.dart';
 import 'package:go_router/go_router.dart';
 
 final appRouter = GoRouter(initialLocation: '/', routes: [
@@ -87,4 +89,10 @@ final appRouter = GoRouter(initialLocation: '/', routes: [
     name: PerfilScreen.name,
     builder: (context, state) =>  PerfilScreen(),
   ),
+  GoRoute(
+    path: '/reporte',
+    name: ReporteScreen.name,
+    builder: (context, state) =>  ReporteScreen(),
+  ),
+ 
 ]);

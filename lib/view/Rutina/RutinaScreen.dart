@@ -1,4 +1,3 @@
-
 import 'package:active_fit/config/theme/app_theme.dart';
 import 'package:active_fit/view/Rutina/CrearRutinaScreen.dart';
 import 'package:active_fit/view/Usuario/RutinaUsuarioScreen.dart';
@@ -9,7 +8,6 @@ import 'package:active_fit/view/widget/custom_image_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
-
 
 class RutinaScreen extends StatefulWidget {
   static const name = '/rutina';
@@ -25,7 +23,7 @@ class _RutinaScreenState extends State<RutinaScreen> {
       appBar: AppBar(
         backgroundColor: AppTheme.scaffoldBbColor,
         elevation: 0,
-       title: Text(
+        title: Text(
           'Rutina',
           style: TextStyle(
             fontSize: 15,
@@ -38,16 +36,16 @@ class _RutinaScreenState extends State<RutinaScreen> {
             child: Row(
               children: [
                 Icon(
-              Icons.add,
-              color: AppTheme.primaryColor,
-            ),
+                  Icons.add,
+                  color: AppTheme.primaryColor,
+                ),
                 Text(
                   'Agregar',
                   style: TextStyle(
                     color: AppTheme.primaryColor,
                     fontWeight: FontWeight.bold,
                   ),
-            ),
+                ),
               ],
             ),
             style: ElevatedButton.styleFrom(
@@ -68,7 +66,6 @@ class _RutinaScreenState extends State<RutinaScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              
               const SizedBox(
                 height: 10,
               ),
@@ -77,14 +74,13 @@ class _RutinaScreenState extends State<RutinaScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                   
                     const SizedBox(
                       height: 20,
                     ),
                     CardRutina(
-                      imagePath: 'assets/gym_ejercicio.jpg',
-                      titulo: 'Rutina de piernas ',
-                      descripcion: "piernas",
+                      imagePath: 'assets/montaun.png',
+                      titulo: 'Mantener el peso ideal ',
+                      descripcion:"",
                       onTap: () {
                         Navigator.push(
                           context,
@@ -94,15 +90,13 @@ class _RutinaScreenState extends State<RutinaScreen> {
                         );
                       },
                     ),
-                     const SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    
-                     
                     CardRutina(
-                      imagePath: 'assets/gym_programacion.jpg',
-                      titulo: 'Rutina de brazos',
-                      descripcion: "brazos",
+                      imagePath: 'assets/flexiones.png',
+                      titulo: 'Bajar de peso',
+                      descripcion:"",
                       onTap: () {
                         Navigator.push(
                           context,
@@ -112,10 +106,22 @@ class _RutinaScreenState extends State<RutinaScreen> {
                         );
                       },
                     ),
-                     const SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    
+                    CardRutina(
+                      imagePath: 'assets/plancha.png',
+                      titulo: 'Aumentar masa muscular',
+                      descripcion:"",
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RutinaUsuarioScreen(),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               )

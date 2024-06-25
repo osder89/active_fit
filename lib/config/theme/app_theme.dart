@@ -10,6 +10,7 @@ class AppTheme {
   static const Color titleColor = Color(0xFF1ED760);
   static const Color whiteTextColor = Colors.white;
   static const Color greyTextColor = Color(0xFF595959);
+  static const Color cardContainer = Color.fromARGB(255, 114, 114, 114) ;
 
   ThemeData getTheme() => ThemeData(
     useMaterial3: true,

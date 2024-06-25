@@ -62,8 +62,8 @@ class _HomeScreenUsuarioState extends State<HomeScreenUsuario> {
                       child: Row(
                         children: [
                           CardInicioUsuario(
-                            imagePath: 'assets/gym_categoria.jpg',
-                            titulo: 'Bajar de peso',
+                            imagePath: 'assets/montaun.png',
+                            titulo: 'Mantener peso ideal',
                             onTap: () {
                               Navigator.push(
                                 context,
@@ -75,7 +75,7 @@ class _HomeScreenUsuarioState extends State<HomeScreenUsuario> {
                             descripcion: "",
                           ),
                           CardInicioUsuario(
-                            imagePath: 'assets/gym_categoria.jpg',
+                            imagePath: 'assets/saltosTijera.png',
                             titulo: 'Bajar de peso',
                             onTap: () {
                               Navigator.push(
@@ -88,8 +88,8 @@ class _HomeScreenUsuarioState extends State<HomeScreenUsuario> {
                             descripcion: "",
                           ),
                           CardInicioUsuario(
-                            imagePath: 'assets/gym_categoria.jpg',
-                            titulo: 'Bajar de peso',
+                            imagePath: 'assets/plancha.png',
+                            titulo: 'Aumentar masa muscular',
                             onTap: () {
                               Navigator.push(
                                 context,
@@ -114,7 +114,7 @@ class _HomeScreenUsuarioState extends State<HomeScreenUsuario> {
                     ),
                     const SizedBox(height: 15),
                     CustomImageCard(
-                      imagePath: 'assets/gym_categoria.jpg',
+                      imagePath: 'assets/gym_programacion.jpg',
                       title: 'Programacion mixta',
                       onTap: () {
                         Navigator.push(
@@ -135,13 +135,13 @@ class _HomeScreenUsuarioState extends State<HomeScreenUsuario> {
                       ),
                     ),
                     SizedBox(height: 15),
-                     SingleChildScrollView(
+                    SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
                           CardInicioUsuario(
-                            imagePath: 'assets/gym_categoria.jpg',
-                            titulo: 'Bajar de peso',
+                            imagePath: 'assets/sentadillas.png',
+                            titulo: 'Sentadillas ',
                             onTap: () {
                               Navigator.push(
                                 context,
@@ -153,8 +153,8 @@ class _HomeScreenUsuarioState extends State<HomeScreenUsuario> {
                             descripcion: "",
                           ),
                           CardInicioUsuario(
-                            imagePath: 'assets/gym_categoria.jpg',
-                            titulo: 'Bajar de peso',
+                            imagePath: 'assets/flexiones.png',
+                            titulo: 'Flexiones',
                             onTap: () {
                               Navigator.push(
                                 context,
@@ -166,8 +166,8 @@ class _HomeScreenUsuarioState extends State<HomeScreenUsuario> {
                             descripcion: "",
                           ),
                           CardInicioUsuario(
-                            imagePath: 'assets/gym_categoria.jpg',
-                            titulo: 'Bajar de peso',
+                            imagePath: 'assets/plancha.png',
+                            titulo: 'Plancha ',
                             onTap: () {
                               Navigator.push(
                                 context,

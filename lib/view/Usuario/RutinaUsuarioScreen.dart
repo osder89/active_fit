@@ -31,7 +31,7 @@ class _RutinaUsuarioScreenState extends State<RutinaUsuarioScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset(
-                        'assets/gym_ejercicio.jpg',
+                        'assets/montaun.png',
                         width: double.infinity,
                       ),
                     ],
@@ -46,7 +46,7 @@ class _RutinaUsuarioScreenState extends State<RutinaUsuarioScreen> {
                         height: 20,
                       ),
                       Text(
-                        'Bajar de peso',
+                        'Mantener  peso ideal',
                         style: TextStyle(
                           color: AppTheme.whiteTextColor,
                           fontSize: 20,
@@ -57,7 +57,7 @@ class _RutinaUsuarioScreenState extends State<RutinaUsuarioScreen> {
                         height: 10,
                       ),
                       Text(
-                        'Una rutina preparada para ti con ejercicios de cardio y pesas para bajar de peso y tonificar tu cuerpo . ',
+                        'El mantenimiento del peso ideal implica un equilibrio entre la ingesta calórica y el gasto energético',
                         style: TextStyle(
                           color: AppTheme.whiteTextColor,
                           fontSize: 20,
@@ -76,8 +76,59 @@ class _RutinaUsuarioScreenState extends State<RutinaUsuarioScreen> {
                         height: 10,
                       ),
                       CardRutinaUsuario(
-                        imagePath: 'assets/gym_ejercicio.jpg',
-                        titulo: 'Rutina de piernas ',
+                        imagePath: 'assets/sentadillas.png',
+                        titulo: 'Sentadillas ',
+                        series: "3",
+                        repeticiones: "13", 
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RutinaUsuarioScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      CardRutinaUsuario(
+                        imagePath: 'assets/flexiones.png',
+                        titulo: 'Flexiones',
+                        series: "3",
+                        repeticiones: "10",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RutinaUsuarioScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      CardRutinaUsuario(
+                        imagePath: 'assets/plancha.png',
+                        titulo: 'Plancha ',
+                        series: "3",
+                        repeticiones: "60",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RutinaUsuarioScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      CardRutinaUsuario(
+                        imagePath: 'assets/zancadas.png',
+                        titulo: 'Zancadas  ',
                         series: "3",
                         repeticiones: "12",
                         onTap: () {
@@ -93,10 +144,10 @@ class _RutinaUsuarioScreenState extends State<RutinaUsuarioScreen> {
                         height: 15,
                       ),
                       CardRutinaUsuario(
-                        imagePath: 'assets/gym_ejercicio.jpg',
-                        titulo: 'Rutina de piernas ',
+                        imagePath: 'assets/burpes.jpg',
+                        titulo: 'Burpees',
                         series: "3",
-                        repeticiones: "12",
+                        repeticiones: "10",
                         onTap: () {
                           Navigator.push(
                             context,
@@ -107,41 +158,7 @@ class _RutinaUsuarioScreenState extends State<RutinaUsuarioScreen> {
                         },
                       ),
                       const SizedBox(
-                        height: 15,
-                      ),
-                      CardRutinaUsuario(
-                        imagePath: 'assets/gym_ejercicio.jpg',
-                        titulo: 'Rutina de piernas ',
-                        series: "3",
-                        repeticiones: "12",
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RutinaUsuarioScreen(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      CardRutinaUsuario(
-                        imagePath: 'assets/gym_ejercicio.jpg',
-                        titulo: 'Rutina de piernas ',
-                        series: "3",
-                        repeticiones: "12",
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RutinaUsuarioScreen(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(
-                        height: 15,
+                        height: 50,
                       ),
                     ],
                   ),

@@ -1,3 +1,4 @@
+import 'package:active_fit/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CardEjercicio extends StatelessWidget {
@@ -23,7 +24,7 @@ class CardEjercicio extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.white, // Cambia el color de fondo según sea necesario
+          color: AppTheme.cardContainer, // Cambia el color de fondo según sea necesario
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,

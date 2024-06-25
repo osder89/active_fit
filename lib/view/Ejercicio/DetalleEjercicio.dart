@@ -82,7 +82,7 @@ class _DetalleEjercicioScreenState extends State<DetalleEjercicioScreen> {
                     },
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 300),
-                      height: _expanded ? 200.0 : 100.0,
+                      height: _expanded ? 400.0 : 100.0,
                       decoration: BoxDecoration(
                         color: AppTheme.whiteTextColor,
                         borderRadius: BorderRadius.vertical(
